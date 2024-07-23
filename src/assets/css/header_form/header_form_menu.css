@@ -1,0 +1,26 @@
+.hfmenu__icon {
+  svg {
+    width: 30px;
+    height: 30px;
+    color: var(--icons);
+  }
+}
+.hfmenu__dropdown {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  position: absolute;
+  top: 50px;
+  transform: translateX(-20px);
+  background-color: var(--container);
+  border-radius: 7px;
+  z-index: 2;
+}
+@media only screen and (min-width: 768px) {
+  .hfmenu__icon {
+    display: none;
+  }
+}

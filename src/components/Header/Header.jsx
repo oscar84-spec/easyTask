@@ -14,7 +14,7 @@ const Header = ({ pathLogo }) => {
         <Button
           text='Iniciar Sesión'
           textColor='#f1f9f9'
-          bgColor='#1C6378'
+          bgColor='#447775'
           url=''
           tipo='button'
         />
@@ -22,7 +22,7 @@ const Header = ({ pathLogo }) => {
           text='Regístrate'
           textColor='#1e1e1e'
           bgColor='#82C4D7'
-          url=''
+          url='/registro'
           tipo='button'
         />
       </div>
