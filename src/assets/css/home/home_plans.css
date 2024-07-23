@@ -1,0 +1,120 @@
+.plans {
+  margin-top: 20px;
+  padding: 20px;
+}
+.plans__container-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.plans__container-text-title {
+  color: var(--letraTitle);
+  font-size: 1.75rem;
+}
+.plans__container-text-text {
+  color: var(--letraOpacity);
+  text-align: center;
+}
+.plans__container-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+.card-plans-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 10px;
+  background-color: #eeeeee;
+  border-radius: 7px;
+}
+.card-plans__text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-plans__text-title {
+  color: var(--letraTitle);
+  text-align: center;
+}
+.card-plans__text-text {
+  color: var(--letraOpacity);
+  text-align: center;
+}
+.card-plans__price-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.card-plans__price-price {
+  text-align: center;
+  color: var(--letraTitle);
+}
+.plan-inc {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.plan-inc__icon {
+  svg {
+    width: 25px;
+    height: 25px;
+  }
+}
+.plan-in__icon-correct {
+  svg {
+    color: var(--correct);
+  }
+}
+.plan-in__icon-error {
+  svg {
+    color: var(--error);
+  }
+}
+.plan-inc__text {
+  color: var(--letraDark);
+}
+.plans__btn {
+  width: 150px;
+  height: 30px;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  background-color: var(--btnAccent);
+  color: var(--letraLight);
+  cursor: pointer;
+}
+@media only screen and (min-width: 768px) {
+  .plans {
+    margin-top: 40px;
+    padding: 40px;
+  }
+  .plans__container-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card-plans-container {
+    width: 300px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .plans {
+    margin-top: 50px;
+    padding: 50px 100px;
+  }
+  .card-plans-container:hover {
+    transform: scale(1.015);
+    transition: all ease-in-out 0.4s;
+    cursor: pointer;
+  }
+}
+@media only screen and (min-width: 1244px) {
+  .plans__container-cards {
+    justify-content: space-between;
+  }
+}

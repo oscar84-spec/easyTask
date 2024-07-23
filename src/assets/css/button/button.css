@@ -1,0 +1,12 @@
+.btn {
+  width: max-content;
+  height: 30px;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+}
+@media only screen and (min-width: 1024px) {
+  .btn {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,21 @@
+.navbar {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .navbar {
+    display: flex;
+    gap: 15px;
+  }
+  .navbar__link {
+    color: var(--letraOpacity);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .navbar {
+    align-items: center;
+  }
+  .navbar__link:hover {
+    color: var(--hover);
+    transition: all ease-in-out 0.3s;
+  }
+}

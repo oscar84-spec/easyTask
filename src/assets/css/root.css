@@ -1,0 +1,32 @@
+:root {
+  --bgColor: #f1f9f9;
+  --letraTitle: #273e4e;
+  --letraLight: #f1f9f9;
+  --letraDark: #1e1e1e;
+  --letraOpacity: #6d6d6d;
+  --gradientC1: #689daa;
+  --gradientC2: #273e4e;
+  --container: #eeeeee;
+  --btnPrimary: #1c6378;
+  --btnSecondary: #82c4d7;
+  --btnAccent: rgba(21, 85, 82, 0.8);
+  --iconOpacity: rgba(21, 85, 82, 0.8);
+  --btnNeutral: #f5f5f5;
+  --hover: #ff6f61;
+  --correct: #3abb45;
+  --error: #e80704;
+  --icons: #273e4e;
+
+  --textTtitle: "Cabin";
+  --textSubtitle: "Laila";
+  --textBody: "Telex";
+}
+.textTitle {
+  font: 700 1.5rem var(--textTtitle);
+}
+.textSubtitle {
+  font: 14px var(--textSubtitle);
+}
+.textBody {
+  font: 14px var(--textBody);
+}

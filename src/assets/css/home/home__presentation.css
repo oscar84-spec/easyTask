@@ -1,0 +1,117 @@
+.presentation {
+  width: 100%;
+  position: relative;
+}
+.presentation__wave {
+  background: url(/waveMobile.svg) center / cover no-repeat;
+  width: 100%;
+  height: 120px;
+}
+.presentation__text-container {
+  position: absolute;
+  top: 20px;
+  padding: 0 20px;
+}
+.presentation__textTtile {
+  color: var(--letraTitle);
+}
+.text--Title {
+  color: var(--letraLight);
+}
+.presentation__textBody {
+  color: var(--letraLight);
+}
+.presentation__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.presentation__presentation-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 5px 20px;
+}
+.presentation__presentation-title {
+  color: var(--letraTitle);
+}
+.presentation__presentation-text {
+  color: var(--letraOpacity);
+}
+.presentation__btn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.presentation__img {
+  background: url(/teamsvg.svg) center / contain no-repeat;
+  width: 274px;
+  height: 220px;
+}
+@media only screen and (min-width: 768px) {
+  .presentation__wave {
+    background: url(/waveTablet.svg) center / cover no-repeat;
+    width: 100%;
+    height: 150px;
+  }
+  .presentation__text-container {
+    width: 500px;
+    padding: 0 40px;
+  }
+  .presentation__textBody {
+    font-size: 16px;
+  }
+  .presentation__presentation-container {
+    padding: 0 40px;
+  }
+  .presentation__presentation-title {
+    font-size: 2rem;
+  }
+  .presentation__presentation-text {
+    font-size: 16px;
+  }
+  .presentation__btn {
+    width: 250px;
+  }
+  .presentation__img {
+    background-size: contain;
+    width: 425px;
+    height: 310px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .presentation__wave {
+    background: url(/waveDesktop.svg) center / cover no-repeat;
+    width: 100%;
+    height: 200px;
+  }
+  .presentation__text-container {
+    width: 800px;
+    padding: 0 100px;
+    top: 30px;
+  }
+  .presentation__textTtile {
+    font-size: 2rem;
+  }
+  .presentation__textBody {
+    font-size: 1.25rem;
+  }
+  .presentation__container {
+    padding: 0 100px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .presentation__presentation-container {
+    width: 350px;
+    padding: 0;
+  }
+}
+@media only screen and (min-width: 1244px) {
+  .presentation__wave {
+    background-size: cover;
+  }
+  .presentation__presentation-container {
+    width: 500px;
+  }
+}
