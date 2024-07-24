@@ -15,7 +15,7 @@ const Header = ({ pathLogo }) => {
           text='Iniciar Sesión'
           textColor='#f1f9f9'
           bgColor='#447775'
-          url=''
+          url='/login'
           tipo='button'
         />
         <Button

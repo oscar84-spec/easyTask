@@ -11,15 +11,21 @@
   height: 30px;
   padding: 5px;
   outline: none;
+  color: var(--letraDark);
   border: #8d8d8d 1px solid;
   border-radius: 5px;
 }
 .name-container__width {
   width: 120px;
 }
-.input__label::after {
+.input__required::after {
   content: "*";
   margin-left: 10px;
+  color: var(--error);
+}
+.input__error {
+  border: var(--error) 1px solid;
+  color: var(--error);
 }
 @media only screen and (min-width: 425px) {
   .name-container__width {

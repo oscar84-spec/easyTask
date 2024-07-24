@@ -18,7 +18,7 @@ const HFMenu = () => {
             textColor='#f1f9f9'
             bgColor='#447775'
             tipo='button'
-            url=''
+            url='/login'
           />
           <Button
             text='Registro'
