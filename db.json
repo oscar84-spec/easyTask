@@ -1,0 +1,33 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "nombre": "Oscar",
+      "usuario": "oscar",
+      "email": "oscar123@gmail.com",
+      "contrasenia": "oscar84",
+      "confirm": "oscar84",
+      "theme": "light"
+    },
+    {
+      "id": "22b951ee-ed0d-4f0e-8c22-f5462e910fa8",
+      "nombre": "Miguel",
+      "apellido": "Molina",
+      "usuario": "miguel_onGrimes",
+      "email": "miguel@gmail.com",
+      "contrasenia": "miguel1234$",
+      "confirmPass": "miguel1234$",
+      "theme": "light"
+    },
+    {
+      "id": "2ebb965d-721e-4a6f-8d52-8dfd974ddbf0",
+      "nombre": "Oscar",
+      "apellido": "Hernández",
+      "usuario": "oscar84_spec",
+      "email": "oscar@gmail.com",
+      "contrasenia": "Poter551147481$",
+      "confirmPass": "Poter551147481$",
+      "theme": "light"
+    }
+  ]
+}

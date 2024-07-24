@@ -41,6 +41,18 @@
   background-color: var(--btnPrimary);
   color: var(--letraLight);
 }
+.login__error {
+  padding: 20px 10px;
+  background-color: rgb(243, 190, 200);
+  color: var(--error);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.login__input-error {
+  border: var(--error) 1px solid;
+}
 @media only screen and (min-width: 425px) {
   .login-container__form {
     display: flex;

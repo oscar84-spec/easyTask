@@ -90,6 +90,21 @@ const confirmPassword = (password, confirmPass) => {
   }
 };
 
+const validLogin = (usuario, contrasenia) => {
+  const inputUser = document.getElementById("user");
+  const inputContrasenia = document.getElementById("password");
+
+  if (usuario === "" && contrasenia === "") {
+    inputUser.classList.add("login__input-error");
+    inputContrasenia.classList.add("login__input-error");
+    return "Los campos no deben estar vacíos";
+  } else {
+    inputUser.classList.remove("login__input-error");
+    inputContrasenia.classList.remove("login__input-error");
+    return "";
+  }
+};
+
 export const valid = {
   validName,
   validSurname,
@@ -97,4 +112,5 @@ export const valid = {
   validEmail,
   validPassword,
   confirmPassword,
+  validLogin,
 };

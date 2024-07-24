@@ -3,6 +3,7 @@ import HeaderForm from "../../components/HeaderForm/HeaderForm";
 import Inputs from "../../components/Inputs/Inputs";
 import { useState } from "react";
 import { valid } from "../../JS/validaciones/validaciones";
+import { apiFetch } from "../../JS/Fetch/api";
 
 const Registro = () => {
   const [nombre, setNombre] = useState("");
@@ -18,6 +19,7 @@ const Registro = () => {
   const [errorEmail, setErrorEmail] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
   const [errorConfirm, setErrorConfirm] = useState("");
+  const theme = "light";
 
   const envioDatos = (e) => {
     e.preventDefault();
@@ -77,7 +79,30 @@ const Registro = () => {
       setErrorConfirm("");
     }
     if (isValid) {
-      console.log("Formulario enviado");
+      const registrarUsuario = async () => {
+        const { listaUsuario, agregarUsuario } = apiFetch;
+        const data = await listaUsuario();
+        console.log(data);
+        try {
+          const userExist = data.some((dato) => dato.email === email);
+          if (userExist) {
+            console.log("Ya existe un usuario");
+          } else {
+            await agregarUsuario(
+              nombre,
+              surname,
+              user,
+              email,
+              password,
+              confirmPass,
+              theme
+            );
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      };
+      registrarUsuario();
     }
   };
   return (
