@@ -30,3 +30,6 @@
 .textBody {
   font: 14px var(--textBody);
 }
+hr {
+  margin: 10px 0;
+}

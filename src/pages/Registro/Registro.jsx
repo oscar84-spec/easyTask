@@ -4,8 +4,10 @@ import Inputs from "../../components/Inputs/Inputs";
 import { useState } from "react";
 import { valid } from "../../JS/validaciones/validaciones";
 import { apiFetch } from "../../JS/Fetch/api";
+import { useNavigate } from "react-router-dom";
 
 const Registro = () => {
+  const navigate = useNavigate();
   const [nombre, setNombre] = useState("");
   const [surname, setSurname] = useState("");
   const [user, setUser] = useState("");
@@ -97,6 +99,8 @@ const Registro = () => {
               confirmPass,
               theme
             );
+            let nombreId = nombre.replace(" ", "").toLowerCase();
+            navigate(`/dashboard/${nombreId}/home`);
           }
         } catch (error) {
           console.error(error);

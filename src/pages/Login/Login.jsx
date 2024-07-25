@@ -5,12 +5,14 @@ import { useState } from "react";
 import { apiFetch } from "../../JS/Fetch/api";
 import { RiErrorWarningLine } from "react-icons/ri";
 import { valid } from "../../JS/validaciones/validaciones";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
 
   const [loginError, setLoginError] = useState("");
+  const navigate = useNavigate();
 
   const { iniciarSesion } = apiFetch;
 
@@ -23,8 +25,10 @@ const Login = () => {
       setLoginError(errorLogin);
     } else {
       const data = await iniciarSesion(user, password);
+      const nombre = data.nombre;
       if (data) {
-        console.log("inicio de sesion exitoso");
+        const nombreId = nombre.replace(" ", "").toLowerCase();
+        navigate(`/dashboard/${nombreId}/home`);
       }
       setLoginError("");
     }

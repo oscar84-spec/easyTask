@@ -28,6 +28,16 @@
       "contrasenia": "Poter551147481$",
       "confirmPass": "Poter551147481$",
       "theme": "light"
+    },
+    {
+      "id": "efb05997-a9c1-4eb5-8d52-79a3af2cc0ac",
+      "nombre": "Luis Ángel",
+      "apellido": "Hernández",
+      "usuario": "luismi",
+      "email": "luismi@gmail.com",
+      "contrasenia": "lu1skumix1n",
+      "confirmPass": "lu1skumix1n",
+      "theme": "light"
     }
   ]
 }
