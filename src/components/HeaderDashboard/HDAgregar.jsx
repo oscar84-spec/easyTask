@@ -2,19 +2,26 @@ import { styledHDAgregar } from "../../assets/styledComponents/HeaderDashboard/S
 import { IoAddCircle } from "react-icons/io5";
 import { FaTable } from "react-icons/fa";
 import { useState } from "react";
+import AgregarTablero from "../AgregarTablero/AgregarTablero";
 
 const HDAgregar = () => {
   const { IconAgregar, ContainerMenu, ButtonAdd, SpanAdd, SpanDescription } =
     styledHDAgregar;
 
   const [showMenu, setShowMenu] = useState(false);
+  const [showAgregar, setShowAgregar] = useState(false);
+
+  const mostar = () => {
+    setShowMenu(!showMenu);
+    setShowAgregar(!showAgregar);
+  };
   return (
     <>
       <IconAgregar onClick={() => setShowMenu(!showMenu)}>
         <IoAddCircle />
       </IconAgregar>
       {showMenu && (
-        <ContainerMenu>
+        <ContainerMenu onClick={mostar}>
           <ButtonAdd>
             <SpanAdd>
               <i>
@@ -29,6 +36,9 @@ const HDAgregar = () => {
             </SpanDescription>
           </ButtonAdd>
         </ContainerMenu>
+      )}
+      {showAgregar && (
+        <AgregarTablero valor={showAgregar} actualizarValor={setShowAgregar} />
       )}
     </>
   );
