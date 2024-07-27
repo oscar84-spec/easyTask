@@ -2,8 +2,9 @@ import { styledAgregarTablero } from "../../assets/styledComponents/AgregarTable
 import Inputs from "../Inputs/Inputs";
 import Colors from "./Colors";
 import { useState } from "react";
+import { apiFetch } from "../../JS/Fetch/api";
 
-const AgregarTablero = ({ valor, actualizarValor }) => {
+const AgregarTablero = ({ valor, actualizarValor, data }) => {
   const {
     ContainerAgregar,
     SpanTitle,
@@ -20,36 +21,47 @@ const AgregarTablero = ({ valor, actualizarValor }) => {
     { color1: "#6190e8", color2: "#a7bfe8" },
   ];
 
+  const { agregarTablero } = apiFetch;
   const [nombreTablero, setNombreTablero] = useState("");
+  const { id } = data;
+  const [color, setColor] = useState([]);
+
+  const getColor = (newColor) => setColor(newColor);
+
+  const addTab = async (e) => {
+    e.preventDefault();
+    try {
+      actualizarValor(!valor);
+      await agregarTablero(nombreTablero, color, id);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
-    <>
-      <ContainerAgregar>
-        <SpanTitle>Crear Tablero</SpanTitle>
-        <ContainerBg>
-          {colors.map((color, index) => (
-            <Colors key={index} color={color} />
-          ))}
-        </ContainerBg>
-        <Inputs
-          textLabel='Nombre del Tablero'
-          textPlaceholder=''
-          idForm='tab'
-          clase=''
-          claseLabel=''
-          valor={nombreTablero}
-          actualizarValor={setNombreTablero}
-        />
-        <ContainerButtons>
-          <ButtonAgregar onClick={() => actualizarValor(!valor)}>
-            Agregar
-          </ButtonAgregar>
-          <ButtonCancelar onClick={() => actualizarValor(!valor)}>
-            Cancelar
-          </ButtonCancelar>
-        </ContainerButtons>
-      </ContainerAgregar>
-    </>
+    <ContainerAgregar onSubmit={addTab}>
+      <SpanTitle>Crear Tablero</SpanTitle>
+      <ContainerBg>
+        {colors.map((color, index) => (
+          <Colors key={index} color={color} getColor={getColor} />
+        ))}
+      </ContainerBg>
+      <Inputs
+        textLabel='Nombre del Tablero'
+        textPlaceholder=''
+        idForm='tab'
+        clase=''
+        claseLabel=''
+        valor={nombreTablero}
+        actualizarValor={setNombreTablero}
+      />
+      <ContainerButtons>
+        <ButtonAgregar type='submit'>Agregar</ButtonAgregar>
+        <ButtonCancelar onClick={() => actualizarValor(!valor)} type='button'>
+          Cancelar
+        </ButtonCancelar>
+      </ContainerButtons>
+    </ContainerAgregar>
   );
 };
 

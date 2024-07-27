@@ -5,7 +5,7 @@ import HDLogo from "./HDLogo";
 import HDMenu from "./HDMenu";
 import HDNavbar from "./HDNavbar";
 
-const HeaderDashboard = ({ userId, estadoAgregar }) => {
+const HeaderDashboard = ({ userId, data }) => {
   const { HeaderContainer, ContainerMenu } = styledHDash;
   return (
     <HeaderContainer>
@@ -13,9 +13,9 @@ const HeaderDashboard = ({ userId, estadoAgregar }) => {
         <HDMenu />
         <HDLogo userId={userId} />
         <HDNavbar />
-        <HDAgregar estadoAgregar={estadoAgregar} />
+        <HDAgregar data={data} />
       </ContainerMenu>
-      <HDAccountAvatar />
+      <HDAccountAvatar data={data} />
     </HeaderContainer>
   );
 };

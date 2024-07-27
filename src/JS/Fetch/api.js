@@ -63,4 +63,51 @@ const agregarUsuario = async (
   }
 };
 
-export const apiFetch = { listaUsuario, iniciarSesion, agregarUsuario };
+const agregarTablero = async (nombreTab, fondo, userId) => {
+  try {
+    await fetch("http://localhost:5000/tableros", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: uuid(),
+        nombreTab,
+        fondo,
+        userId,
+      }),
+    });
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const getTableros = async (userId) => {
+  try {
+    const response = await fetch(
+      `http://localhost:5000/tableros?userId=${userId}`
+    );
+
+    return await response.json();
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const deleteTabs = async (tabId) => {
+  try {
+    await fetch(`http://localhost:5000/tableros/${tabId}`, {
+      method: "DELETE",
+    });
+  } catch (error) {
+    console.error(error);
+  }
+};
+export const apiFetch = {
+  listaUsuario,
+  iniciarSesion,
+  agregarUsuario,
+  agregarTablero,
+  getTableros,
+  deleteTabs,
+};

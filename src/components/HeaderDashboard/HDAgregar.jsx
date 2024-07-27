@@ -4,7 +4,7 @@ import { FaTable } from "react-icons/fa";
 import { useState } from "react";
 import AgregarTablero from "../AgregarTablero/AgregarTablero";
 
-const HDAgregar = () => {
+const HDAgregar = ({ data }) => {
   const { IconAgregar, ContainerMenu, ButtonAdd, SpanAdd, SpanDescription } =
     styledHDAgregar;
 
@@ -38,7 +38,11 @@ const HDAgregar = () => {
         </ContainerMenu>
       )}
       {showAgregar && (
-        <AgregarTablero valor={showAgregar} actualizarValor={setShowAgregar} />
+        <AgregarTablero
+          valor={showAgregar}
+          actualizarValor={setShowAgregar}
+          data={data}
+        />
       )}
     </>
   );

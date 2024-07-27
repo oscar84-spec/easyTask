@@ -24,8 +24,46 @@ const TabItem = styled.div`
   width: 130px;
   height: 100px;
   margin-bottom: 20px;
-  background-color: #e2e2e2;
+  background: ${({ $fondo }) =>
+    `linear-gradient(90deg, ${$fondo.color1}, ${$fondo.color2})`};
   border-radius: 7px;
-  border: red solid;
 `;
-export const styledViewTab = { ContainerViewTab, TabItem };
+
+const TabOverlay = styled.div`
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: 500 14px "Laila";
+  color: #f1f9f9;
+  position: relative;
+  &:hover {
+    cursor: pointer;
+    color: #191a1a;
+    background-color: transparent;
+    transition: all ease-in-out 0.3s;
+  }
+`;
+
+const TabIcon = styled.i`
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  svg {
+    width: 25px;
+    height: 25px;
+    color: #273e4e;
+  }
+  @media only screen and (min-width: 1024px) {
+    svg:hover {
+      cursor: pointer;
+      color: crimson;
+      transition: all ease-in-out 0.3s;
+    }
+  }
+`;
+export const styledViewTab = { ContainerViewTab, TabItem, TabOverlay, TabIcon };

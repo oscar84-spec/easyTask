@@ -23,7 +23,7 @@ const TableroContainer = styled.div`
   }
   @media only screen and (min-width: 1244px) {
     & {
-      gap: 200px;
+      gap: 100px;
     }
   }
 `;
@@ -43,6 +43,12 @@ const ContainerSidebar = styled.div`
       width: 200px;
     }
   }
+  @media only screen and (min-width: 1244px) {
+    & {
+      width: 250px;
+      margin-top: 50px;
+    }
+  }
 `;
 
 const ContainerTab = styled.div`
@@ -58,8 +64,11 @@ const ContainerTab = styled.div`
   }
   @media only screen and (min-width: 1024px) {
     & {
-      width: 500px;
+      width: 600px;
     }
+  }
+  @media only screen and (min-width: 1244px) {
+    margin-top: 50px;
   }
 `;
 export const styledTableros = {

@@ -6,7 +6,7 @@ const ColorsLabel = styled.label`
 `;
 
 const ColorsInput = styled.input`
-  display: none;
+  /* display: none; */
 `;
 
 const ColorsDiv = styled.div`
@@ -15,7 +15,6 @@ const ColorsDiv = styled.div`
   background: ${({ $color1, $color2 }) =>
     `linear-gradient(90deg, ${$color1}, ${$color2})`};
   cursor: pointer;
-  border: 2px solid #000;
 `;
 
 export const styledColors = { ColorsLabel, ColorsInput, ColorsDiv };

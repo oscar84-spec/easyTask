@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ContainerAgregar = styled.div`
+const ContainerAgregar = styled.form`
   width: 280px;
   height: max-content;
   padding: 10px;
@@ -13,6 +13,19 @@ const ContainerAgregar = styled.div`
   position: absolute;
   top: 150px;
   left: 20px;
+  @media only screen and (min-width: 375px) {
+    left: 50px;
+  }
+  @media only screen and (min-width: 768px) {
+    left: 230px;
+  }
+  @media only screen and (min-width: 1024px) {
+    top: 200px;
+    left: 300px;
+  }
+  @media only screen and (min-width: 1244px) {
+    left: 400px;
+  }
 `;
 
 const SpanTitle = styled.span`
@@ -47,6 +60,9 @@ const ButtonAgregar = styled.button`
   background-color: #273e4e;
   color: #f1f9f9;
   border-radius: 7px;
+  @media only screen and (min-width: 1024px) {
+    cursor: pointer;
+  }
 `;
 const ButtonCancelar = styled.button`
   width: 100px;
@@ -56,6 +72,9 @@ const ButtonCancelar = styled.button`
   background-color: #f1f9f9;
   color: #273e4e;
   border-radius: 7px;
+  @media only screen and (min-width: 1024px) {
+    cursor: pointer;
+  }
 `;
 export const styledAgregarTablero = {
   ContainerAgregar,

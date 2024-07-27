@@ -39,5 +39,43 @@
       "confirmPass": "lu1skumix1n",
       "theme": "light"
     }
+  ],
+  "tableros": [
+    {
+      "id": "1b87a92e-3db7-4554-b605-99c087865d0a",
+      "nombreTab": "Miguel",
+      "fondo": {
+        "color1": "#c193c5",
+        "color2": "#7bc6cc"
+      },
+      "userId": "22b951ee-ed0d-4f0e-8c22-f5462e910fa8"
+    },
+    {
+      "id": "789a8e40-0731-4aa2-90ee-ff4a9eac5348",
+      "nombreTab": "Luis",
+      "fondo": {
+        "color1": "#bdc3c7",
+        "color2": "#2c3e50"
+      },
+      "userId": "efb05997-a9c1-4eb5-8d52-79a3af2cc0ac"
+    },
+    {
+      "id": "66a1c69c-fc3b-40b3-bff2-ded55c77dad7",
+      "nombreTab": "Oscar",
+      "fondo": {
+        "color1": "#bdc3c7",
+        "color2": "#2c3e50"
+      },
+      "userId": "2ebb965d-721e-4a6f-8d52-8dfd974ddbf0"
+    },
+    {
+      "id": "68239585-4224-4025-b0ae-4e05a6531379",
+      "nombreTab": "pruebaid",
+      "fondo": {
+        "color1": "#c193c5",
+        "color2": "#7bc6cc"
+      },
+      "userId": "2ebb965d-721e-4a6f-8d52-8dfd974ddbf0"
+    }
   ]
 }

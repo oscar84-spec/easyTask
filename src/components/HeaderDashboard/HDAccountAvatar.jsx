@@ -11,7 +11,7 @@ import { LuCreditCard } from "react-icons/lu";
 import { IoLogOut } from "react-icons/io5";
 import SwitchTheme from "../SwitchTheme/SwitchTheme";
 
-const HDAccountAvatar = () => {
+const HDAccountAvatar = ({ data }) => {
   const {
     AccountAvatar,
     ContainerAccountMenu,
@@ -46,9 +46,14 @@ const HDAccountAvatar = () => {
     { icon: <IoMdHelp />, text: "Ayuda" },
     { icon: <MdDirections />, text: "Accesos directos" },
   ];
+
+  const { nombre, email } = data;
+  const avatarLetra = nombre.charAt(0).toUpperCase();
   return (
     <>
-      <AccountAvatar onClick={() => setShowMenu(!showMenu)}>O</AccountAvatar>
+      <AccountAvatar onClick={() => setShowMenu(!showMenu)}>
+        {avatarLetra}
+      </AccountAvatar>
       {showMenu && (
         <ContainerAccountMenu>
           <ContainerSpanText>
@@ -58,10 +63,10 @@ const HDAccountAvatar = () => {
             </ButtonCloseAccount>
           </ContainerSpanText>
           <ContainerAvatar>
-            <IconAvatar>O</IconAvatar>
+            <IconAvatar>{avatarLetra}</IconAvatar>
             <TextContainer>
-              <SpanName>Oscar Hernández</SpanName>
-              <SpanEmail>oscar@gmail.com</SpanEmail>
+              <SpanName>{nombre}</SpanName>
+              <SpanEmail>{email}</SpanEmail>
             </TextContainer>
           </ContainerAvatar>
           <AplicacionesContainer>

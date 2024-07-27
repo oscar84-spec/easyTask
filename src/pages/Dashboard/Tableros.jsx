@@ -3,7 +3,7 @@ import TabBienvenida from "./TabBienvenida";
 import TableroSidebar from "./TableroSidebar";
 import ViewTableros from "./ViewTableros";
 
-const Tableros = () => {
+const Tableros = ({ data }) => {
   const { TableroContainer, ContainerSidebar, ContainerTab } = styledTableros;
   return (
     <TableroContainer>
@@ -11,9 +11,9 @@ const Tableros = () => {
         <TableroSidebar />
       </ContainerSidebar>
       <ContainerTab>
-        <TabBienvenida />
+        <TabBienvenida data={data} />
         <hr />
-        <ViewTableros />
+        <ViewTableros data={data} />
       </ContainerTab>
     </TableroContainer>
   );
