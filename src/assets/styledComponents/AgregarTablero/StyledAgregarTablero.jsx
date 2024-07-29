@@ -13,6 +13,7 @@ const ContainerAgregar = styled.form`
   position: absolute;
   top: 150px;
   left: 20px;
+  z-index: 999;
   @media only screen and (min-width: 375px) {
     left: 50px;
   }

@@ -4,8 +4,10 @@ import { useParams } from "react-router-dom";
 import Tableros from "./Tableros";
 import { useState, useEffect } from "react";
 
-const Dashboard = () => {
+const Dashboard = ({ accountId, tabId }) => {
   const { id } = useParams();
+  const accId = id;
+
   const { SectionContainer } = styledDashboard;
 
   const [data, setData] = useState(null);
@@ -19,6 +21,7 @@ const Dashboard = () => {
         const response = await fetch(`http://localhost:5000/users/${id}`);
         const result = await response.json();
         setData(result);
+        accountId(accId);
       } catch (error) {
         console.error(error);
       } finally {
@@ -38,7 +41,7 @@ const Dashboard = () => {
   return (
     <SectionContainer>
       <HeaderDashboard userId={id} data={data} />
-      <Tableros data={data} />
+      <Tableros data={data} userId={id} tabId={tabId} />
     </SectionContainer>
   );
 };

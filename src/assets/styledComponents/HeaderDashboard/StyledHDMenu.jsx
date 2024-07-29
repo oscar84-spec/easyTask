@@ -15,6 +15,7 @@ const ContainerMenu = styled.div`
   top: 50px;
   background-color: #e2e2e2;
   border-radius: 7px;
+  z-index: 999;
 `;
 
 const ButtonClose = styled.button`

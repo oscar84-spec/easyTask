@@ -66,4 +66,17 @@ const TabIcon = styled.i`
     }
   }
 `;
-export const styledViewTab = { ContainerViewTab, TabItem, TabOverlay, TabIcon };
+
+const Container = styled.div`
+  width: 130px;
+  height: 100px;
+  border-radius: 7px;
+  position: relative;
+`;
+export const styledViewTab = {
+  ContainerViewTab,
+  TabItem,
+  TabOverlay,
+  TabIcon,
+  Container,
+};

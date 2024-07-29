@@ -20,6 +20,7 @@ const ContainerAccountMenu = styled.div`
   border-radius: 7px;
   background-color: #e2e2e2;
   right: 10px;
+  z-index: 999;
   @media only screen and (min-width: 768px) {
     & {
       right: 50px;
