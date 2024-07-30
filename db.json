@@ -60,85 +60,46 @@
       "userId": "efb05997-a9c1-4eb5-8d52-79a3af2cc0ac"
     },
     {
-      "id": "e8de50e9-779b-43b5-961e-c51987d77253",
+      "id": "dbd1fc14-7f9a-4a5a-917e-1da989a2d9d3",
       "nombreTab": "Proyecto Final",
+      "fondo": {
+        "color1": "#c193c5",
+        "color2": "#7bc6cc"
+      },
+      "userId": "2ebb965d-721e-4a6f-8d52-8dfd974ddbf0"
+    },
+    {
+      "id": "3086f111-8116-4c46-9358-84686bbafc25",
+      "nombreTab": "Inventario",
       "fondo": {
         "color1": "#bdc3c7",
         "color2": "#2c3e50"
-      },
-      "userId": "2ebb965d-721e-4a6f-8d52-8dfd974ddbf0"
-    },
-    {
-      "id": "2270357a-766a-4c39-ae01-ce79f4435345",
-      "nombreTab": "Inventario",
-      "fondo": {
-        "color1": "#000428",
-        "color2": "#004e92"
-      },
-      "userId": "2ebb965d-721e-4a6f-8d52-8dfd974ddbf0"
-    },
-    {
-      "id": "0060a817-d1e7-4f0a-81a9-0dae43fa6831",
-      "nombreTab": "Final",
-      "fondo": {
-        "color1": "#6190e8",
-        "color2": "#a7bfe8"
       },
       "userId": "2ebb965d-721e-4a6f-8d52-8dfd974ddbf0"
     }
   ],
   "listas": [
     {
-      "id": "73481c46-4b39-4f16-983e-cd5879dd92f6",
+      "id": "e9619ca9-7ef7-4267-9385-de0e09954136",
       "nombre": "Por Hacer",
-      "idTab": "e8de50e9-779b-43b5-961e-c51987d77253"
+      "idTab": "dbd1fc14-7f9a-4a5a-917e-1da989a2d9d3"
     },
     {
-      "id": "182e62a5-d189-4b59-a5e3-671eab8af36c",
-      "nombre": "Por Hacer",
-      "idTab": "2270357a-766a-4c39-ae01-ce79f4435345"
+      "id": "6288ae2e-e916-4a35-a1dc-fde833144b84",
+      "nombre": "En proceso",
+      "idTab": "dbd1fc14-7f9a-4a5a-917e-1da989a2d9d3"
     }
   ],
   "tarjetas": [
     {
-      "id": "d651b705-b371-4198-800d-6132d1e10fcf",
-      "desc": "Ir al museo de la CDMX el antes del 15 de Agosto",
-      "color": {
-        "text": "No urge",
-        "bgColor": "green"
-      },
-      "idList": "73481c46-4b39-4f16-983e-cd5879dd92f6",
-      "nameCard": "Ir al museo"
-    },
-    {
-      "id": "0041b135-bf18-4aed-a2c2-4982e1104945",
+      "id": "2313142c-bd93-4552-a45c-c11151a6f2c0",
       "desc": "Terminar la tarea de ED antes del miercoles",
       "color": {
         "text": "Urgente",
         "bgColor": "red"
       },
-      "idList": "73481c46-4b39-4f16-983e-cd5879dd92f6",
+      "idList": "6288ae2e-e916-4a35-a1dc-fde833144b84",
       "nameCard": "Terminar la tarea"
-    },
-    {
-      "id": "53e16a4f-392b-443a-9e11-eda36e020433",
-      "desc": "Terminar de hace el inventario antes de que llegue auditoria",
-      "color": {
-        "text": "Urgente",
-        "bgColor": "red"
-      },
-      "idList": "182e62a5-d189-4b59-a5e3-671eab8af36c",
-      "nameCard": "hacer inventario"
-    },
-    {
-      "id": "7d7654b3-4548-4547-bee9-981886eaa08b",
-      "desc": "Ir al museo de la CDMX el antes del 15 de Agosto",
-      "color": {
-        "text": "Urge, pero puede esperar",
-        "bgColor": "orange"
-      },
-      "idList": "73481c46-4b39-4f16-983e-cd5879dd92f6",
-      "nameCard": "Ir al museo"
     }
   ]
 }

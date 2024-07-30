@@ -14,6 +14,7 @@ const TabUser = ({ idAccount, idTablero }) => {
   const { showList } = apiFetch;
   const [listTab, setListTab] = useState([]);
 
+  /* Obteniendo las listas de json-server */
   useEffect(() => {
     const listShow = async (idTab) => {
       try {

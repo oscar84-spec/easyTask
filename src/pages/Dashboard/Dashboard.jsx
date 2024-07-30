@@ -3,8 +3,10 @@ import HeaderDashboard from "../../components/HeaderDashboard/HeaderDashboard";
 import { useParams } from "react-router-dom";
 import Tableros from "./Tableros";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = ({ accountId, tabId }) => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const accId = id;
 
@@ -15,6 +17,9 @@ const Dashboard = ({ accountId, tabId }) => {
 
   useEffect(() => {
     const userId = localStorage.getItem("userId");
+    if (userId === "" || userId === null) {
+      navigate("/");
+    }
 
     const getUser = async (id) => {
       try {

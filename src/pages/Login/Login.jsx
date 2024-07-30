@@ -8,11 +8,11 @@ import { valid } from "../../JS/validaciones/validaciones";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
 
   const [loginError, setLoginError] = useState("");
-  const navigate = useNavigate();
 
   const { iniciarSesion } = apiFetch;
 

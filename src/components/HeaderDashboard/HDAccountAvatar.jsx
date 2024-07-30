@@ -10,6 +10,7 @@ import { MdBackupTable, MdDirections } from "react-icons/md";
 import { LuCreditCard } from "react-icons/lu";
 import { IoLogOut } from "react-icons/io5";
 import SwitchTheme from "../SwitchTheme/SwitchTheme";
+import { useNavigate } from "react-router-dom";
 
 const HDAccountAvatar = ({ data }) => {
   const {
@@ -25,6 +26,7 @@ const HDAccountAvatar = ({ data }) => {
     SpanEmail,
     ButtonSesionClose,
   } = styledHDAccountAvatar;
+  const navigate = useNavigate();
 
   const { AplicacionesContainer } = styledHDMenu;
 
@@ -49,6 +51,11 @@ const HDAccountAvatar = ({ data }) => {
 
   const { nombre, email } = data;
   const avatarLetra = nombre.charAt(0).toUpperCase();
+
+  const sessionClose = () => {
+    localStorage.removeItem("userId");
+    navigate("/");
+  };
   return (
     <>
       <AccountAvatar onClick={() => setShowMenu(!showMenu)}>
@@ -89,7 +96,7 @@ const HDAccountAvatar = ({ data }) => {
           </AplicacionesContainer>
           <SwitchTheme />
           <hr />
-          <ButtonSesionClose>
+          <ButtonSesionClose onClick={sessionClose}>
             <IoLogOut /> Cerrar Sesión
           </ButtonSesionClose>
         </ContainerAccountMenu>

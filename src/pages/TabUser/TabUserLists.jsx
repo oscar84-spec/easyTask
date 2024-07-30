@@ -18,6 +18,7 @@ const TabUserLists = ({ list }) => {
 
   const [showCards, setShowCards] = useState([]);
 
+  /* Obteniendo las tarjetas de json-server */
   useEffect(() => {
     const listCards = async (idList) => {
       try {
@@ -35,8 +36,39 @@ const TabUserLists = ({ list }) => {
     const update = showCards.filter((card) => card.id !== idList);
     setShowCards(update);
   };
+
+  const handleDragStart = (e, cardId) => {
+    e.dataTransfer.setData("cardId", cardId);
+    e.dataTransfer.setData("listId", id);
+    console.log("drag start");
+  };
+
+  const handleDrop = async (e, destinationListId) => {
+    const cardId = e.dataTransfer.getData("cardId");
+    const sourceListId = e.dataTransfer.getData("listId");
+
+    console.log(cardId, sourceListId, destinationListId);
+
+    if (sourceListId === destinationListId) {
+      return;
+    }
+
+    await fetch(`http://localhost:5000/tarjetas/${cardId}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ idList: destinationListId }),
+    });
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+  };
+
   return (
-    <ListContainer>
+    <ListContainer
+      onDrop={(e) => handleDrop(e, id)}
+      onDragOver={handleDragOver}
+    >
       <ContainerNameIcon>
         <ListName>{nombre}</ListName>
         <ListIconClose onClick={() => eliminarLista(id)}>
@@ -47,7 +79,11 @@ const TabUserLists = ({ list }) => {
       <ContainerCards>
         {/* Aqui se renderizan las tarjetas */}
         {showCards.map((card, index) => (
-          <CardTabUser key={index} card={card} />
+          <CardTabUser
+            key={index}
+            card={card}
+            handleDragStart={handleDragStart}
+          />
         ))}
       </ContainerCards>
       <TabUserCards idList={id} />

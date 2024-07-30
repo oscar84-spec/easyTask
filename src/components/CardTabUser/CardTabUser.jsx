@@ -2,7 +2,7 @@ import { styledCardUser } from "../../assets/styledComponents/TabUser/StyledCard
 import { IoCloseOutline } from "react-icons/io5";
 import { apiFetch } from "../../JS/Fetch/api";
 
-const CardTabUser = ({ card }) => {
+const CardTabUser = ({ card, handleDragStart }) => {
   const {
     ContainerCard,
     ContainerNameIcon,
@@ -15,11 +15,10 @@ const CardTabUser = ({ card }) => {
   const { nameCard, color, desc, id } = card;
   const { deleteCard } = apiFetch;
 
-  const eliminarTarjeta = async (idCard) => {
-    await deleteCard(idCard);
-  };
+  const eliminarTarjeta = async (idCard) => await deleteCard(idCard);
+
   return (
-    <ContainerCard>
+    <ContainerCard draggable='true' onDragStart={(e) => handleDragStart(e, id)}>
       <ContainerNameIcon>
         <NameCard>{nameCard}</NameCard>
         <CardIcon onClick={() => eliminarTarjeta(id)}>
