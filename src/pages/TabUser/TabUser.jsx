@@ -47,7 +47,7 @@ const TabUser = ({ idAccount, idTablero, tema }) => {
     const obtenerFondo = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/tableros/${idTablero}`
+          `https://apieasytask.vercel.app/tableros/${idTablero}`
         );
         const data = await response.json();
         setFondo(data.fondo);

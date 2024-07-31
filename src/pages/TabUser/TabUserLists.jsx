@@ -53,7 +53,7 @@ const TabUserLists = ({ list }) => {
       return;
     }
 
-    await fetch(`http://localhost:5000/tarjetas/${cardId}`, {
+    await fetch(`https://apieasytask.vercel.app/tarjetas/${cardId}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ idList: destinationListId }),
