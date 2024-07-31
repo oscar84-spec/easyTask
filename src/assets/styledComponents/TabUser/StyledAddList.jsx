@@ -3,8 +3,8 @@ import styled from "styled-components";
 const ContainerButtonAddList = styled.div`
   width: 280px;
   height: max-content;
-  border: red solid;
   position: relative;
+  margin-top: 20px;
 `;
 
 const ButtonAddList = styled.button`
@@ -16,13 +16,15 @@ const ButtonAddList = styled.button`
   justify-content: space-evenly;
   align-items: center;
   font: 14px "Telex";
-  color: #f1f9f9;
-  background-color: #273e4e;
+  color: ${({ theme }) => theme.letraBlanca};
+  background-color: ${({ theme }) => theme.btnPrimary};
+  border: none;
+  outline: none;
   border-radius: 7px;
   svg {
     width: 25px;
     height: 25px;
-    color: #f1f9f9;
+    color: ${({ theme }) => theme.letraBlanca};
   }
   @media only screen and (min-width: 1024px) {
     cursor: pointer;
@@ -33,7 +35,7 @@ const FormAddList = styled.form`
   width: 100%;
   height: max-content;
   padding: 10px;
-  background-color: #e2e2e2;
+  background-color: ${({ theme }) => theme.container};
   border-radius: 7px;
   position: absolute;
   top: 50px;

@@ -3,7 +3,6 @@ import styled from "styled-components";
 const ContainerColors = styled.label`
   width: 100%;
   height: max-content;
-  border: blue solid;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,7 +19,7 @@ const ColorsCard = styled.div`
 
 const SpanName = styled.span`
   font: 14px "Telex";
-  color: #191a1a;
+  color: ${({ theme }) => theme.letraDark};
 `;
 export const styledColorsCards = {
   ContainerColors,

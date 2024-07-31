@@ -4,9 +4,17 @@ import { useState, useEffect } from "react";
 import { IoIosCloseCircle } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
-const ViewTableros = ({ data, userId, tabId }) => {
-  const { ContainerViewTab, TabItem, TabOverlay, TabIcon, Container } =
-    styledViewTab;
+const ViewTableros = ({ data, userId, tabId, theme }) => {
+  const {
+    ContainerViewTab,
+    TabItem,
+    TabOverlay,
+    TabIcon,
+    Container,
+    ContainerNotTab,
+    SpanText,
+    NotTabImg,
+  } = styledViewTab;
   const { getTableros, deleteTabs } = apiFetch;
   const { id } = data;
   const [tabs, setTabs] = useState([]);
@@ -35,10 +43,20 @@ const ViewTableros = ({ data, userId, tabId }) => {
     tabId(id);
   };
 
+  if (!tabs) {
+    return <div>No data available</div>;
+  }
+
   return (
     <ContainerViewTab>
       {tabs.length === 0 ? (
-        <span>No hay nada</span>
+        <ContainerNotTab>
+          <SpanText>
+            Parece que aún no tienes ningún tablero agregado, haz click en el
+            icono de arriba para agregar uno
+          </SpanText>
+          <NotTabImg $theme={theme} />
+        </ContainerNotTab>
       ) : (
         tabs.map(({ nombreTab, fondo, id }, index) => (
           <Container key={index}>

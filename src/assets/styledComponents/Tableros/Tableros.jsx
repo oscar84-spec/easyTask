@@ -3,7 +3,6 @@ import styled from "styled-components";
 const TableroContainer = styled.div`
   width: 100%;
   height: calc(100vh - 50px);
-  border: blue solid;
   @media only screen and (min-width: 425px) {
     & {
       padding: 0 20px;
@@ -29,14 +28,14 @@ const TableroContainer = styled.div`
 `;
 
 const ContainerSidebar = styled.div`
-  border: green solid;
   width: 300px;
   height: max-content;
   margin-top: 20px;
   padding: 10px;
   border-radius: 7px;
-  background-color: #e2e2e2;
+  background-color: ${({ theme }) => theme.container};
   display: none;
+  transition: all ease-in-out 0.3s;
   @media only screen and (min-width: 768px) {
     & {
       display: block;

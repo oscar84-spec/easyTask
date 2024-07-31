@@ -3,7 +3,6 @@ import styled from "styled-components";
 const ContainerAddCard = styled.div`
   width: 100%;
   height: max-content;
-  border: red solid;
   position: relative;
 `;
 
@@ -13,8 +12,8 @@ const ButtonAddCards = styled.button`
   border: none;
   outline: none;
   border-radius: 7px;
-  background-color: #273e4e;
-  color: #f1f9f9;
+  background-color: ${({ theme }) => theme.btnPrimary};
+  color: ${({ theme }) => theme.letraBlanca};
   font: 14px "Telex";
   display: flex;
   justify-content: space-evenly;
@@ -22,7 +21,7 @@ const ButtonAddCards = styled.button`
   svg {
     width: 25px;
     height: 25px;
-    color: #f1f9f9;
+    color: ${({ theme }) => theme.letraBlanca};
   }
   @media only screen and (min-width: 1024px) {
     cursor: pointer;

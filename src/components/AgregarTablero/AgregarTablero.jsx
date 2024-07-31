@@ -14,11 +14,11 @@ const AgregarTablero = ({ valor, actualizarValor, data }) => {
     ButtonCancelar,
   } = styledAgregarTablero;
   const colors = [
-    { color1: "#bdc3c7", color2: "#2c3e50" },
-    { color1: "#c193c5", color2: "#7bc6cc" },
-    { color1: "#000428", color2: "#004e92" },
-    { color1: "#2980b9", color2: "#6dd5fa" },
-    { color1: "#6190e8", color2: "#a7bfe8" },
+    { color1: "#ebf5aa", color2: "#e92085" },
+    { color1: "#efed9c", color2: "#ea260d" },
+    { color1: "#cca3ef", color2: "#442540" },
+    { color1: "#e7f7a7", color2: "#a2a7d7" },
+    { color1: "#faf2ea", color2: "#9facd9" },
   ];
 
   const { agregarTablero } = apiFetch;

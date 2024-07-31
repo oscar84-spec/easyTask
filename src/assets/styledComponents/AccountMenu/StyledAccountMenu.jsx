@@ -9,16 +9,18 @@ const ListMenu = styled.button`
   outline: none;
   border-radius: 5px;
   font: 14px "Telex";
-  background-color: #e2e2e2;
-  color: #191a1a;
+  background-color: ${({ theme }) => theme.container};
+  color: ${({ theme }) => theme.letraDark};
+  transition: all ease-in-out 0.3s;
   svg {
     width: 15px;
     height: 15px;
-    color: #273e4e;
+    color: ${({ theme }) => theme.icons};
+    transition: all ease-in-out 0.3s;
   }
   @media only screen and (min-width: 1024px) {
     &:hover {
-      background-color: #d3d3d3;
+      background-color: ${({ theme }) => theme.containerHover};
       cursor: pointer;
       transition: all ease-in-out 0.3s;
     }

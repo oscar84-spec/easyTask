@@ -4,8 +4,9 @@ const Icon = styled.i`
   svg {
     width: 25px;
     height: 25px;
-    color: #273e4e;
+    color: ${({ theme }) => theme.headerIcon};
     cursor: pointer;
+    transition: all ease-in-out 0.3s;
   }
 `;
 const ContainerMenu = styled.div`
@@ -13,9 +14,10 @@ const ContainerMenu = styled.div`
   padding: 10px;
   position: absolute;
   top: 50px;
-  background-color: #e2e2e2;
+  background-color: ${({ theme }) => theme.container};
   border-radius: 7px;
   z-index: 999;
+  transition: all ease-in-out 0.3s;
 `;
 
 const ButtonClose = styled.button`
@@ -23,13 +25,15 @@ const ButtonClose = styled.button`
   border: none;
   outline: none;
   border-radius: 50%;
-  background-color: #e2e2e2;
+  background-color: ${({ theme }) => theme.container};
   svg {
     width: 25px;
     height: 25px;
-    color: #273e4e;
+    color: ${({ theme }) => theme.iconClose};
     cursor: pointer;
+    transition: all ease-in-out 0.3s;
   }
+  transition: all ease-in-out 0.3s;
 `;
 
 const SpanText = styled.span`
@@ -37,7 +41,8 @@ const SpanText = styled.span`
   margin-top: 10px;
   margin-left: 10px;
   font: 14px "Telex";
-  color: #191a1a;
+  color: ${({ theme }) => theme.letraDark};
+  transition: all ease-in-out 0.3s;
 `;
 
 const AplicacionesContainer = styled.div`

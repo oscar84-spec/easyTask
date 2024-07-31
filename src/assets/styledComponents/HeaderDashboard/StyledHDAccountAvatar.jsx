@@ -6,10 +6,11 @@ const AccountAvatar = styled.button`
   border: none;
   outline: none;
   border-radius: 50%;
-  background-color: #abceee;
-  color: #472843;
+  background-color: ${({ theme }) => theme.icons};
+  color: ${({ theme }) => theme.letraLight};
   font: 500 20px "Cabin";
   cursor: pointer;
+  transition: all ease-in-out 0.3s;
 `;
 
 const ContainerAccountMenu = styled.div`
@@ -18,9 +19,10 @@ const ContainerAccountMenu = styled.div`
   position: absolute;
   top: 60px;
   border-radius: 7px;
-  background-color: #e2e2e2;
+  background-color: ${({ theme }) => theme.container};
   right: 10px;
   z-index: 999;
+  transition: all ease-in-out 0.3s;
   @media only screen and (min-width: 768px) {
     & {
       right: 50px;
@@ -42,7 +44,8 @@ const ContainerSpanText = styled.div`
 
 const SpanText = styled.span`
   font: 500 14px "Telex";
-  color: #6d6d6d;
+  color: ${({ theme }) => theme.letraOpacity};
+  transition: all ease-in-out 0.3s;
 `;
 
 const ButtonCloseAccount = styled.button`
@@ -51,12 +54,14 @@ const ButtonCloseAccount = styled.button`
   align-items: center;
   border: none;
   outline: none;
-  background-color: #e2e2e2;
+  background-color: ${({ theme }) => theme.container};
   border-radius: 50%;
+  transition: all ease-in-out 0.3s;
   svg {
     width: 20px;
     height: 20px;
-    color: #273e4e;
+    color: ${({ theme }) => theme.iconClose};
+    transition: all ease-in-out 0.3s;
   }
   @media only screen and (min-width: 1024px) {
     & {
@@ -80,8 +85,9 @@ const IconAvatar = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #273e4e;
-  color: #f1f9f9;
+  background-color: ${({ theme }) => theme.icons};
+  color: ${({ theme }) => theme.letraLight};
+  transition: all ease-in-out 0.3s;
 `;
 const TextContainer = styled.div`
   display: flex;
@@ -89,11 +95,13 @@ const TextContainer = styled.div`
 `;
 const SpanName = styled.span`
   font: 14px "Telex";
-  color: #191a1a;
+  color: ${({ theme }) => theme.letraDark};
+  transition: all ease-in-out 0.3s;
 `;
 const SpanEmail = styled.span`
   font: 12px "Telex";
-  color: #6d6d6d;
+  color: ${({ theme }) => theme.letraOpacity};
+  transition: all ease-in-out 0.3s;
 `;
 
 const ButtonSesionClose = styled.button`
@@ -106,10 +114,11 @@ const ButtonSesionClose = styled.button`
   border: none;
   outline: none;
   border-radius: 7px;
-  background-color: #273e4e;
-  color: #f1f9f9;
+  background-color: ${({ theme }) => theme.btnPrimary};
+  color: ${({ theme }) => theme.letraBlanca};
   font: 14px "Telex";
   cursor: pointer;
+  transition: all ease-in-out 0.3s;
 `;
 export const styledHDAccountAvatar = {
   AccountAvatar,

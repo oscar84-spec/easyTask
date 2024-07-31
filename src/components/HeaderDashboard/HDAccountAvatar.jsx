@@ -12,7 +12,7 @@ import { IoLogOut } from "react-icons/io5";
 import SwitchTheme from "../SwitchTheme/SwitchTheme";
 import { useNavigate } from "react-router-dom";
 
-const HDAccountAvatar = ({ data }) => {
+const HDAccountAvatar = ({ data, theme, setTheme }) => {
   const {
     AccountAvatar,
     ContainerAccountMenu,
@@ -94,7 +94,7 @@ const HDAccountAvatar = ({ data }) => {
               <AccountMenu key={index} item={item} />
             ))}
           </AplicacionesContainer>
-          <SwitchTheme />
+          <SwitchTheme theme={theme} setTheme={setTheme} />
           <hr />
           <ButtonSesionClose onClick={sessionClose}>
             <IoLogOut /> Cerrar Sesión

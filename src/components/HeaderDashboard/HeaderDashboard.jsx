@@ -5,17 +5,17 @@ import HDLogo from "./HDLogo";
 import HDMenu from "./HDMenu";
 import HDNavbar from "./HDNavbar";
 
-const HeaderDashboard = ({ userId, data }) => {
+const HeaderDashboard = ({ userId, data, theme, setTheme }) => {
   const { HeaderContainer, ContainerMenu } = styledHDash;
   return (
     <HeaderContainer>
       <ContainerMenu>
         <HDMenu />
-        <HDLogo userId={userId} />
+        <HDLogo userId={userId} theme={theme} />
         <HDNavbar />
         <HDAgregar data={data} />
       </ContainerMenu>
-      <HDAccountAvatar data={data} />
+      <HDAccountAvatar data={data} theme={theme} setTheme={setTheme} />
     </HeaderContainer>
   );
 };

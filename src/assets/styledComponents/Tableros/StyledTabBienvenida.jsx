@@ -9,12 +9,14 @@ const ContainerBienvenida = styled.div`
 
 const SpanTitle = styled.h2`
   font: 1.5rem "Cabin";
-  color: #273e4e;
+  color: ${({ theme }) => theme.letraDark};
+  transition: all ease-in-out 0.3s;
 `;
 
 const SpanText = styled.span`
   font: 0.875rem "Telex";
-  color: #6d6d6d;
+  color: ${({ theme }) => theme.letraOpacity};
+  transition: all ease-in-out 0.3s;
 `;
 
 export const styledTabbienvenida = { ContainerBienvenida, SpanTitle, SpanText };

@@ -8,8 +8,8 @@ const ContainerAgregar = styled.form`
   flex-direction: column;
   gap: 15px;
   border-radius: 7px;
-  background-color: #e2e2e2;
-  border: red solid;
+  background-color: ${({ theme }) => theme.container};
+  transition: all ease-in-out 0.3s;
   position: absolute;
   top: 150px;
   left: 20px;
@@ -31,7 +31,8 @@ const ContainerAgregar = styled.form`
 
 const SpanTitle = styled.span`
   font: 1rem "Laila";
-  color: #191a1a;
+  color: ${({ theme }) => theme.letraDark};
+  transition: all ease-in-out 0.3s;
   text-align: center;
 `;
 
@@ -42,7 +43,6 @@ const ContainerBg = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  border: red solid;
 `;
 
 const ContainerButtons = styled.div`
@@ -58,8 +58,9 @@ const ButtonAgregar = styled.button`
   height: 35px;
   border: none;
   outline: none;
-  background-color: #273e4e;
-  color: #f1f9f9;
+  background-color: ${({ theme }) => theme.btnPrimary};
+  color: ${({ theme }) => theme.letraBlanca};
+  transition: all ease-in-out 0.3s;
   border-radius: 7px;
   @media only screen and (min-width: 1024px) {
     cursor: pointer;
@@ -70,9 +71,10 @@ const ButtonCancelar = styled.button`
   height: 35px;
   border: none;
   outline: none;
-  background-color: #f1f9f9;
-  color: #273e4e;
+  background-color: ${({ theme }) => theme.btnSecondary};
+  color: ${({ theme }) => theme.letraDark};
   border-radius: 7px;
+  transition: all ease-in-out 0.3s;
   @media only screen and (min-width: 1024px) {
     cursor: pointer;
   }

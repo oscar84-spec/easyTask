@@ -4,11 +4,16 @@ import { useParams } from "react-router-dom";
 import Tableros from "./Tableros";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import Themes from "../../JS/Themes/themes";
+import { themeUser } from "../../JS/Themes/themeUser";
 
-const Dashboard = ({ accountId, tabId }) => {
+const Dashboard = ({ accountId, tabId, obtenerTema }) => {
   const navigate = useNavigate();
   const { id } = useParams();
   const accId = id;
+  const [theme, setTheme] = useState("light");
+  const { getThemeUser } = themeUser;
 
   const { SectionContainer } = styledDashboard;
 
@@ -36,6 +41,21 @@ const Dashboard = ({ accountId, tabId }) => {
 
     getUser(userId);
   }, []);
+
+  useEffect(() => {
+    const getTheme = async () => {
+      const userId = localStorage.getItem("userId");
+      const data = await getThemeUser(userId);
+      const themeUser = data.theme === theme ? "light" : "dark";
+      setTheme(themeUser);
+    };
+    getTheme();
+  }, []);
+
+  useEffect(() => {
+    obtenerTema(theme);
+  }, [theme]);
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -44,10 +64,17 @@ const Dashboard = ({ accountId, tabId }) => {
     return <div>No data available</div>;
   }
   return (
-    <SectionContainer>
-      <HeaderDashboard userId={id} data={data} />
-      <Tableros data={data} userId={id} tabId={tabId} />
-    </SectionContainer>
+    <ThemeProvider theme={Themes[theme]}>
+      <SectionContainer>
+        <HeaderDashboard
+          userId={id}
+          data={data}
+          theme={theme}
+          setTheme={setTheme}
+        />
+        <Tableros data={data} userId={id} tabId={tabId} theme={theme} />
+      </SectionContainer>
+    </ThemeProvider>
   );
 };
 

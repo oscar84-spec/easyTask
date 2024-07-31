@@ -7,22 +7,26 @@ const ContainerAd = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  background-color: ${({ theme }) => theme.container};
+  transition: all ease-in-out 0.3s;
 `;
 
 const SpanText = styled.span`
   font: 14px "Laila";
-  color: #191a1a;
+  color: ${({ theme }) => theme.letraDark};
+  transition: all ease-in-out 0.3s;
 `;
 
 const SpanDesc = styled.p`
   font: 13px "Telex";
-  color: #6d6d6d;
+  color: ${({ theme }) => theme.letraOpacity};
 `;
 
 const LinkText = styled.span`
   font: 14px "Telex";
-  color: #273e4e;
+  color: ${({ theme }) => theme.containerLink};
   text-decoration: underline;
+  transition: all ease-in-out 0.3s;
   @media only screen and (min-width: 1024px) {
     cursor: pointer;
   }

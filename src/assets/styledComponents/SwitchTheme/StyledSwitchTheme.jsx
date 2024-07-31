@@ -6,15 +6,16 @@ const ButtonTheme = styled.button`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #191a1a;
+  color: ${({ theme }) => theme.letraDark};
   font: 14px "Telex";
   border: none;
   outline: none;
-  background-color: #e2e2e2;
+  background-color: ${({ theme }) => theme.container};
+  transition: all ease-in-out 0.3s;
   @media only screen and (min-width: 1024px) {
     &:hover {
       cursor: pointer;
-      background-color: #d3d3d3;
+      background-color: ${({ theme }) => theme.containerHover};
     }
   }
 `;
@@ -25,8 +26,8 @@ const ContainerSwitch = styled.div`
   border-radius: 20px;
   display: flex;
   align-items: center;
-  border: 2px #8d8d8d solid;
-  background-color: #e2e2e2;
+  border: 2px ${({ theme }) => theme.borderSwitch} solid;
+  background-color: ${({ theme }) => theme.container};
   transition: all ease-in-out 0.3s;
 `;
 
@@ -34,8 +35,11 @@ const SwitchCircle = styled.div`
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: #273e4e;
-  transform: translateX(5px);
+  background-color: ${({ theme }) => theme.switchColor};
+  transform: translateX(
+    ${({ $theme }) => ($theme === "dark" ? "35px" : "5px")}
+  );
+  transition: all ease-in-out 0.3s;
 `;
 
 export const styledSwitch = { ButtonTheme, ContainerSwitch, SwitchCircle };

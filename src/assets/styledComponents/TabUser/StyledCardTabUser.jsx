@@ -5,7 +5,7 @@ const ContainerCard = styled.div`
   height: max-content;
   padding: 5px;
   border-radius: 7px;
-  background-color: #e2e2e2;
+  background-color: ${({ theme }) => theme.contianerHover};
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -21,14 +21,14 @@ const ContainerNameIcon = styled.div`
 
 const NameCard = styled.span`
   font: 20px "Cabin";
-  color: #191a1a;
+  color: ${({ theme }) => theme.letraDark};
 `;
 
 const CardIcon = styled.i`
   svg {
     width: 20px;
     height: 20px;
-    color: #273e4e;
+    color: ${({ theme }) => theme.iconClose};
   }
 `;
 
@@ -49,7 +49,7 @@ const TagColor = styled.div`
 
 const CardDesc = styled.span`
   font: 14px "Telex";
-  color: #191a1a;
+  color: ${({ theme }) => theme.letraDark};
 `;
 
 export const styledCardUser = {

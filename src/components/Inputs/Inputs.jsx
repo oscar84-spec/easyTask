@@ -1,4 +1,5 @@
 import "../../assets/css/inputs/inputs.css";
+import { styledInput } from "../../assets/styledComponents/Input/Input";
 
 const Inputs = ({
   textLabel,
@@ -10,11 +11,15 @@ const Inputs = ({
   valor,
   actualizarValor,
 }) => {
+  const { InputLabel } = styledInput;
   return (
     <div className='input'>
-      <label htmlFor={idForm} className={`input__label textBody ${claseLabel}`}>
+      <InputLabel
+        htmlFor={idForm}
+        className={`input__label textBody ${claseLabel}`}
+      >
         {textLabel}
-      </label>
+      </InputLabel>
       <input
         type={tipo}
         className={`input__input textBody ${clase}`}

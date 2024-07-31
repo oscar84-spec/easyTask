@@ -8,6 +8,7 @@ const ContainerViewTab = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 10px;
   @media only screen and (min-width: 768px) {
     & {
       width: 300px;
@@ -73,10 +74,36 @@ const Container = styled.div`
   border-radius: 7px;
   position: relative;
 `;
+
+const ContainerNotTab = styled.div`
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+const SpanText = styled.span`
+  font: 14px "Telex";
+  color: ${({ theme }) => theme.letraDark};
+  transition: all ease-in-out 0.3s;
+`;
+
+const NotTabImg = styled.div`
+  width: 100%;
+  height: 300px;
+  background: url(${({ $theme }) =>
+      $theme === "dark" ? "/emptyDark.svg" : "/emptyLigth.svg"})
+    center / contain no-repeat;
+  transition: all ease-in-out 0.3s;
+`;
 export const styledViewTab = {
   ContainerViewTab,
   TabItem,
   TabOverlay,
   TabIcon,
   Container,
+  ContainerNotTab,
+  SpanText,
+  NotTabImg,
 };

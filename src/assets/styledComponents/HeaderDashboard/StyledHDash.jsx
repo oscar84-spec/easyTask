@@ -6,6 +6,8 @@ const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: ${({ theme }) => theme.headerColor};
+  transition: all ease-in-out 0.3s;
   @media only screen and (min-width: 425px) {
     & {
       padding: 0 20px;
