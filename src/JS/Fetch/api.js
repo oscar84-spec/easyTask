@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 
-const urlFetch = "http://localhost:5000/users";
+const urlFetch = "https://easy-task-lake.vercel.app/users";
 
 const listaUsuario = async () => {
   try {
