@@ -29,7 +29,7 @@ const Dashboard = ({ accountId, tabId, obtenerTema }) => {
     const getUser = async (id) => {
       try {
         const response = await fetch(
-          `https://apieasytask.vercel.app/users/${id}`
+          `https://prueba-api-zeta.vercel.app/users/${id}`
         );
         const result = await response.json();
         setData(result);

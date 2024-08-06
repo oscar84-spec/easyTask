@@ -88,7 +88,7 @@ const Registro = () => {
         try {
           const userExist = data.some((dato) => dato.email === email);
           if (userExist) {
-            console.log("Ya existe un usuario");
+            alert("Ya existe un usuario");
           } else {
             await agregarUsuario(
               nombre,

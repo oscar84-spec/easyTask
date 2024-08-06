@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 
-const urlFetch = "https://apieasytask.vercel.app/users";
+const urlFetch = "https://prueba-api-zeta.vercel.app/users";
 
 const listaUsuario = async () => {
   try {
@@ -14,7 +14,7 @@ const listaUsuario = async () => {
 
 const iniciarSesion = async (usuario, contrasenia) => {
   try {
-    const response = await fetch("https://apieasytask.vercel.app/users");
+    const response = await fetch("https://prueba-api-zeta.vercel.app/users");
     const users = await response.json();
 
     const userFond = users.find(
@@ -65,7 +65,7 @@ const agregarUsuario = async (
 
 const agregarTablero = async (nombreTab, fondo, userId) => {
   try {
-    await fetch("https://apieasytask.vercel.app/tableros", {
+    await fetch("https://prueba-api-zeta.vercel.app/tableros", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -85,7 +85,7 @@ const agregarTablero = async (nombreTab, fondo, userId) => {
 const getTableros = async (userId) => {
   try {
     const response = await fetch(
-      `https://apieasytask.vercel.app/tableros?userId=${userId}`
+      `https://prueba-api-zeta.vercel.app/tableros?userId=${userId}`
     );
 
     return await response.json();
@@ -96,7 +96,7 @@ const getTableros = async (userId) => {
 
 const deleteTabs = async (tabId) => {
   try {
-    await fetch(`https://apieasytask.vercel.app/tableros/${tabId}`, {
+    await fetch(`https://prueba-api-zeta.vercel.app/tableros/${tabId}`, {
       method: "DELETE",
     });
   } catch (error) {
@@ -106,7 +106,7 @@ const deleteTabs = async (tabId) => {
 
 const addList = async (nombre, idTab) => {
   try {
-    await fetch("https://apieasytask.vercel.app/listas", {
+    await fetch("https://prueba-api-zeta.vercel.app/listas", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -125,7 +125,7 @@ const addList = async (nombre, idTab) => {
 const showList = async (idTab) => {
   try {
     const response = await fetch(
-      `https://apieasytask.vercel.app/listas?idTab=${idTab}`
+      `https://prueba-api-zeta.vercel.app/listas?idTab=${idTab}`
     );
     return await response.json();
   } catch (error) {
@@ -135,7 +135,7 @@ const showList = async (idTab) => {
 
 const addCard = async (idList, desc, color, nameCard) => {
   try {
-    await fetch("https://apieasytask.vercel.app/tarjetas", {
+    await fetch("https://prueba-api-zeta.vercel.app/tarjetas", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -156,7 +156,7 @@ const addCard = async (idList, desc, color, nameCard) => {
 const getCards = async (idList) => {
   try {
     const response = await fetch(
-      `https://apieasytask.vercel.app/tarjetas?idList=${idList}`
+      `https://prueba-api-zeta.vercel.app/tarjetas?idList=${idList}`
     );
     return await response.json();
   } catch (error) {
@@ -166,7 +166,7 @@ const getCards = async (idList) => {
 
 const deleteCard = async (idCard) => {
   try {
-    await fetch(`https://apieasytask.vercel.app/tarjetas/${idCard}`, {
+    await fetch(`https://prueba-api-zeta.vercel.app/tarjetas/${idCard}`, {
       method: "DELETE",
     });
   } catch (error) {
@@ -177,18 +177,18 @@ const deleteCard = async (idCard) => {
 const deleteList = async (listId) => {
   try {
     const response = await fetch(
-      `https://apieasytask.vercel.app/tarjetas?idList=${listId}`
+      `https://prueba-api-zeta.vercel.app/tarjetas?idList=${listId}`
     );
 
     const tarjetas = await response.json();
 
     for (const tarjeta of tarjetas) {
-      await fetch(`https://apieasytask.vercel.app/tarjetas/${tarjeta.id}`, {
+      await fetch(`https://prueba-api-zeta.vercel.app/tarjetas/${tarjeta.id}`, {
         method: "DELETE",
       });
     }
 
-    await fetch(`https://apieasytask.vercel.app/listas/${listId}`, {
+    await fetch(`https://prueba-api-zeta.vercel.app/listas/${listId}`, {
       method: "DELETE",
     });
   } catch (error) {
