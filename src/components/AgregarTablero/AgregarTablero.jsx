@@ -4,7 +4,7 @@ import Colors from "./Colors";
 import { useState } from "react";
 import { apiFetch } from "../../JS/Fetch/api";
 
-const AgregarTablero = ({ valor, actualizarValor, data }) => {
+const AgregarTablero = ({ valor, actualizarValor, data, getStateCurrent }) => {
   const {
     ContainerAgregar,
     SpanTitle,
@@ -25,6 +25,7 @@ const AgregarTablero = ({ valor, actualizarValor, data }) => {
   const [nombreTablero, setNombreTablero] = useState("");
   const { id } = data;
   const [color, setColor] = useState([]);
+  const [updated, setUpdated] = useState(false);
 
   const getColor = (newColor) => setColor(newColor);
 
@@ -33,10 +34,12 @@ const AgregarTablero = ({ valor, actualizarValor, data }) => {
     try {
       actualizarValor(!valor);
       await agregarTablero(nombreTablero, color, id);
+      setUpdated(!updated);
     } catch (error) {
       console.error(error);
     }
   };
+  getStateCurrent(updated);
 
   return (
     <ContainerAgregar onSubmit={addTab}>

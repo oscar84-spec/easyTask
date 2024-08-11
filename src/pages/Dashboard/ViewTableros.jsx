@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { IoIosCloseCircle } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
-const ViewTableros = ({ data, userId, tabId, theme }) => {
+const ViewTableros = ({ data, userId, tabId, theme, getStateCurrent }) => {
   const {
     ContainerViewTab,
     TabItem,
@@ -18,6 +18,7 @@ const ViewTableros = ({ data, userId, tabId, theme }) => {
   const { getTableros, deleteTabs } = apiFetch;
   const { id } = data;
   const [tabs, setTabs] = useState([]);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -29,8 +30,9 @@ const ViewTableros = ({ data, userId, tabId, theme }) => {
         console.error(error);
       }
     };
-    showTab(id);
-  }, [tabs]);
+    showTab(id); /* 
+    getStateCurrent(updated); */
+  }, [id]);
 
   const eliminarTab = async (tabId) => {
     await deleteTabs(tabId);

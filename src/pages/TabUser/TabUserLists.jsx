@@ -53,7 +53,7 @@ const TabUserLists = ({ list }) => {
       return;
     }
 
-    await fetch(`https://prueba-api-zeta.vercel.app/tarjetas/${cardId}`, {
+    await fetch(`https://api-easytask.vercel.app/tarjetas/${cardId}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ idList: destinationListId }),

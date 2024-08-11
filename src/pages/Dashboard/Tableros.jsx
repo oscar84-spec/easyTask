@@ -3,7 +3,7 @@ import TabBienvenida from "./TabBienvenida";
 import TableroSidebar from "./TableroSidebar";
 import ViewTableros from "./ViewTableros";
 
-const Tableros = ({ data, userId, tabId, theme }) => {
+const Tableros = ({ data, userId, tabId, theme, getStateCurrent }) => {
   const { TableroContainer, ContainerSidebar, ContainerTab } = styledTableros;
   return (
     <TableroContainer>
@@ -13,7 +13,13 @@ const Tableros = ({ data, userId, tabId, theme }) => {
       <ContainerTab>
         <TabBienvenida data={data} />
         <hr />
-        <ViewTableros data={data} userId={userId} tabId={tabId} theme={theme} />
+        <ViewTableros
+          data={data}
+          userId={userId}
+          tabId={tabId}
+          theme={theme}
+          getStateCurrent={getStateCurrent}
+        />
       </ContainerTab>
     </TableroContainer>
   );

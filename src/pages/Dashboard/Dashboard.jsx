@@ -19,6 +19,10 @@ const Dashboard = ({ accountId, tabId, obtenerTema }) => {
 
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [actual, setActual] = useState(false);
+
+  const getStateCurrent = (estado) => setActual(estado);
+  console.log("actual", actual);
 
   useEffect(() => {
     const userId = localStorage.getItem("userId");
@@ -29,7 +33,7 @@ const Dashboard = ({ accountId, tabId, obtenerTema }) => {
     const getUser = async (id) => {
       try {
         const response = await fetch(
-          `https://prueba-api-zeta.vercel.app/users/${id}`
+          `https://api-easytask.vercel.app/users/${id}`
         );
         const result = await response.json();
         setData(result);
@@ -73,6 +77,7 @@ const Dashboard = ({ accountId, tabId, obtenerTema }) => {
           data={data}
           theme={theme}
           setTheme={setTheme}
+          getStateCurrent={getStateCurrent}
         />
         <Tableros data={data} userId={id} tabId={tabId} theme={theme} />
       </SectionContainer>

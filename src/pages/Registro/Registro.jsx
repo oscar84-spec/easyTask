@@ -84,9 +84,9 @@ const Registro = () => {
       const registrarUsuario = async () => {
         const { listaUsuario, agregarUsuario } = apiFetch;
         const data = await listaUsuario();
-        console.log(data);
+        const dataUsers = data.users;
         try {
-          const userExist = data.some((dato) => dato.email === email);
+          const userExist = dataUsers.some((dato) => dato.email === email);
           if (userExist) {
             alert("Ya existe un usuario");
           } else {
