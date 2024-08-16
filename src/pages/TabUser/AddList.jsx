@@ -5,7 +5,7 @@ import { useState } from "react";
 import Inputs from "../../components/Inputs/Inputs";
 import { apiFetch } from "../../JS/Fetch/api";
 
-const AddList = ({ idTablero }) => {
+const AddList = ({ idTablero, onUpdated }) => {
   const { ContainerButtonAddList, ButtonAddList, FormAddList } = styledAddLists;
   const { ContainerButtons, ButtonAgregar, ButtonCancelar } =
     styledAgregarTablero;
@@ -22,6 +22,7 @@ const AddList = ({ idTablero }) => {
         setShowAddList(!showAddList);
         setNameList("");
       }
+      onUpdated();
     } catch (error) {
       console.error(error);
     }

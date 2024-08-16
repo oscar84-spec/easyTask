@@ -19,10 +19,9 @@ const Dashboard = ({ accountId, tabId, obtenerTema }) => {
 
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [actual, setActual] = useState(false);
+  const [updated, setUpdated] = useState(false);
 
-  const getStateCurrent = (estado) => setActual(estado);
-  console.log("actual", actual);
+  const actualizarTabs = () => setUpdated(!updated);
 
   useEffect(() => {
     const userId = localStorage.getItem("userId");
@@ -77,9 +76,15 @@ const Dashboard = ({ accountId, tabId, obtenerTema }) => {
           data={data}
           theme={theme}
           setTheme={setTheme}
-          getStateCurrent={getStateCurrent}
+          onUpdated={actualizarTabs}
         />
-        <Tableros data={data} userId={id} tabId={tabId} theme={theme} />
+        <Tableros
+          data={data}
+          userId={id}
+          tabId={tabId}
+          theme={theme}
+          updated={updated}
+        />
       </SectionContainer>
     </ThemeProvider>
   );

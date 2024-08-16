@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { apiFetch } from "../../JS/Fetch/api";
 import { IoCloseOutline } from "react-icons/io5";
 
-const TabUserLists = ({ list }) => {
+const TabUserLists = ({ list, onUpdated }) => {
   const {
     ListContainer,
     ListName,
@@ -17,47 +17,61 @@ const TabUserLists = ({ list }) => {
   const { getCards, deleteList } = apiFetch;
 
   const [showCards, setShowCards] = useState([]);
+  const [updated, setUpdated] = useState(false);
 
-  /* Obteniendo las tarjetas de json-server */
+  const actualizarTarjetas = () => setUpdated(!updated);
+
+  /* Mostrando las tarjetas de la api */
   useEffect(() => {
     const listCards = async (idList) => {
       try {
         const dataCards = await getCards(idList);
         setShowCards(dataCards);
+        setUpdated(!updated);
       } catch (error) {
         console.error(error);
       }
     };
     listCards(id);
-  }, [showCards]);
+  }, [id, updated]);
 
   const eliminarLista = async (idList) => {
     await deleteList(idList);
     const update = showCards.filter((card) => card.id !== idList);
     setShowCards(update);
+    onUpdated();
   };
 
-  const handleDragStart = (e, cardId) => {
+  const handleDragStart = (e, cardId, idList) => {
     e.dataTransfer.setData("cardId", cardId);
-    e.dataTransfer.setData("listId", id);
-    console.log("drag start");
+    e.dataTransfer.setData("listId", idList);
   };
 
   const handleDrop = async (e, destinationListId) => {
     const cardId = e.dataTransfer.getData("cardId");
     const sourceListId = e.dataTransfer.getData("listId");
 
-    console.log(cardId, sourceListId, destinationListId);
-
     if (sourceListId === destinationListId) {
       return;
     }
+    try {
+      const response = await fetch(
+        `https://api-easytask.vercel.app/tarjetas/${cardId}`,
+        {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ idList: destinationListId }),
+        }
+      );
 
-    await fetch(`https://api-easytask.vercel.app/tarjetas/${cardId}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ idList: destinationListId }),
-    });
+      /* if (response.ok) {
+        console.log("Tarjeta movida correctamente");
+      } else {
+        console.error("Error al mover la tarjeta");
+      } */
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleDragOver = (e) => {
@@ -83,10 +97,11 @@ const TabUserLists = ({ list }) => {
             key={index}
             card={card}
             handleDragStart={handleDragStart}
+            onUpdated={actualizarTarjetas}
           />
         ))}
       </ContainerCards>
-      <TabUserCards idList={id} />
+      <TabUserCards idList={id} onUpdated={actualizarTarjetas} />
       {/* Este es el boton para agregar las tarjetas */}
     </ListContainer>
   );

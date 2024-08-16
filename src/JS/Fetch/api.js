@@ -1,5 +1,3 @@
-import { v4 as uuid } from "uuid";
-
 const urlFetch = "https://api-easytask.vercel.app/users";
 
 const listaUsuario = async () => {
@@ -16,10 +14,7 @@ const iniciarSesion = async (usuario, contrasenia) => {
   try {
     const response = await fetch("https://api-easytask.vercel.app/users");
     const users = await response.json();
-    console.log("users", users.users);
-    const dataUsers = users.users;
-
-    const userFond = dataUsers.find(
+    const userFond = users.find(
       (user) => user.usuario === usuario && user.contrasenia === contrasenia
     );
 
@@ -50,7 +45,6 @@ const agregarUsuario = async (
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        id: uuid(),
         nombre,
         apellido,
         usuario,
@@ -73,7 +67,6 @@ const agregarTablero = async (nombreTab, fondo, userId) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        id: uuid(),
         nombreTab,
         fondo,
         userId,
@@ -89,7 +82,6 @@ const getTableros = async (userId) => {
     const response = await fetch(
       `https://api-easytask.vercel.app/tableros?userId=${userId}`
     );
-
     return await response.json();
   } catch (error) {
     console.error(error);
@@ -114,7 +106,6 @@ const addList = async (nombre, idTab) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        id: uuid(),
         nombre,
         idTab,
       }),
@@ -143,7 +134,6 @@ const addCard = async (idList, desc, color, nameCard) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        id: uuid(),
         desc,
         color,
         idList,

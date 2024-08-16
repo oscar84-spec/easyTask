@@ -5,7 +5,7 @@ const ContainerCard = styled.div`
   height: max-content;
   padding: 5px;
   border-radius: 7px;
-  background-color: ${({ theme }) => theme.contianerHover};
+  background-color: ${({ theme }) => theme.containerHover};
   display: flex;
   flex-direction: column;
   gap: 15px;

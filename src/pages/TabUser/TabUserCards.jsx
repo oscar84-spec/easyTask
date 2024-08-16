@@ -7,7 +7,7 @@ import { useState } from "react";
 import ColorsCard from "../../components/ColorsCard/ColorsCard";
 import { apiFetch } from "../../JS/Fetch/api";
 
-const TabUserCards = ({ idList }) => {
+const TabUserCards = ({ idList, onUpdated }) => {
   const { ContainerAddCard, ButtonAddCards, ContainerBg } = styledTabUserCards;
   const { FormAddList } = styledAddLists;
   const { ContainerButtons, ButtonAgregar, ButtonCancelar } =
@@ -35,6 +35,7 @@ const TabUserCards = ({ idList }) => {
         setShowCard(!showCard);
         setDesc("");
         setNameCard("");
+        onUpdated();
       }
     } catch (error) {
       console.error(error);

@@ -22,8 +22,11 @@ const TabUser = ({ idAccount, idTablero, tema }) => {
   const { updateThemeUser } = themeUser;
   const [fondo, setFondo] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [updated, setUpdated] = useState(false);
 
-  /* Obteniendo las listas de json-server */
+  const actualzarListas = () => setUpdated(!updated);
+
+  /* Mostrando las listas de la api en el tablero */
   useEffect(() => {
     const listShow = async (idTab) => {
       try {
@@ -34,7 +37,7 @@ const TabUser = ({ idAccount, idTablero, tema }) => {
       }
     };
     listShow(idTablero);
-  }, [listTab]);
+  }, [idTablero, updated]);
 
   const changeTheme = async () => {
     const accountId = localStorage.getItem("userId");
@@ -85,9 +88,13 @@ const TabUser = ({ idAccount, idTablero, tema }) => {
           <ContainerListFlex>
             {/* Aqui se renderizan las listas */}
             {listTab.map((list, index) => (
-              <TabUserLists key={index} list={list} />
+              <TabUserLists
+                key={index}
+                list={list}
+                onUpdated={actualzarListas}
+              />
             ))}
-            <AddList idTablero={idTablero} />
+            <AddList idTablero={idTablero} onUpdated={actualzarListas} />
           </ContainerListFlex>
         </ContainerLists>
       </SectionTabUser>
